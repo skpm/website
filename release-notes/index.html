@@ -22,7 +22,7 @@
 		new: '#3EAD3F'
 	}
 
-	fetch('https://api.github.com/repos/skpm/skpm/contents/changelog.json')
+	fetch('https://api.github.com/repos/skpm/skpm/contents/packages/skpm/changelog.json')
 		.then(function (res) { return res.json() })
 		.then(function (res) { return JSON.parse(window.atob(res.content)) })
 		.then(function (res) {
