@@ -14,4 +14,10 @@ install:
   - npm install
 
 script:
-  - ./node_modules/ugly-build/travis-deploy.sh skpm/website
+  - node ./node_modules/ugly-build/index.js build
+  
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    local_dir: .build
